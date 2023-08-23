@@ -1,5 +1,6 @@
 name: Test Apps
 
+
 on:
   pull_request:
     branches: [ "main" ]
@@ -17,3 +18,10 @@ jobs:
 
     - name: Test app
       run: make test
+
+    - name: Update Comment in PR
+      uses: thollander/actions-comment-pull-request@v2
+      with:
+         filePath: testresults
+      
+
